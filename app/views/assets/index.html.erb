@@ -1,0 +1,32 @@
+<br>
+<div>
+  <div>
+    <div>
+      <% if @assets.present? %>
+        <table>
+        <tr>
+         <th>Name</td>
+         <th>Latitude</td>
+         <th>Longitude</td>
+         <th>Inside?</td>
+         <th>Google Maps Link</td>
+        </tr>
+        <% @assets.each do |asset| %>
+
+          <tr>
+            <td> <%= asset.name %> </td>
+            <td> <%= asset.latitude %> </td>
+            <td> <%= asset.longitude %> </td>
+            <td> <%= asset.in_location? %> </td>
+            <td> <%= link_to "Open", asset.link, target: :_blank %> </td>
+          </tr>
+        <% end %>
+      </table>
+
+
+      <% else %>
+       <div> No Data! Please create some </div>
+      <% end %>
+    </div>
+  </div>
+</div>
