@@ -1,4 +1,9 @@
 <br>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
 <div>
   <div>
     <div>
@@ -10,6 +15,7 @@
          <th>Longitude</td>
          <th>Inside?</td>
          <th>Google Maps Link</td>
+         <th>Modify</td>
         </tr>
         <% @assets.each do |asset| %>
 
@@ -19,6 +25,7 @@
             <td> <%= asset.longitude %> </td>
             <td> <%= asset.in_location? %> </td>
             <td> <%= link_to "Open", asset.link, target: :_blank %> </td>
+            <td> <%= link_to "Modify", edit_asset_path(asset) %> </td>
           </tr>
         <% end %>
       </table>

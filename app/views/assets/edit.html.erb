@@ -1,0 +1,40 @@
+<div>
+  <h5>Edit asset location</h5>
+
+<%= form_for @asset, html: { autocomplete: "off" } do |f| %>
+  <% if f.object.errors.any? %>
+    <ul class="alert alert-danger">
+      <% f.object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<div class="row">
+    <div class="col">
+
+    </div>
+
+    <div>
+      <div>
+
+        <div>
+          <%= f.label "Latitude:" %>
+          <%= f.text_field :latitude %>
+        </div>
+
+        <div>
+          <%= f.label "Longitude:" %>
+          <%= f.text_field :longitude %>
+        </div>
+      </div>
+
+      <br>
+
+      <%= f.submit "Update" %>
+      <br>
+      <br>
+    </div>
+  <% end %>
+</div>
+
+</div>
